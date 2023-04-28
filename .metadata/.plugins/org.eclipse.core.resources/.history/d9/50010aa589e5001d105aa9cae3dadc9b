@@ -1,0 +1,13 @@
+package step2;
+
+public class run {
+	public static void main(String[] args) {
+		P148653 p = new P148653();
+		
+		try {
+			System.out.println(p.solution(75));
+		} catch(Exception e) {
+			System.out.println("ERROR : " + e.getMessage());
+		}
+	}
+}

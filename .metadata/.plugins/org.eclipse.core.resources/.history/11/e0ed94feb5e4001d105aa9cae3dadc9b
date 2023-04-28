@@ -1,0 +1,30 @@
+package step1;
+import java.util.*;
+
+public class ex {
+	/* 정수 삼각형 - https://school.programmers.co.kr/learn/courses/30/lessons/43105 */
+    public int solution1(int[][] triangle) {
+        int answer = 0;
+        int num = 0;
+        
+        int[][] sum = new int[triangle.length][triangle.length];
+        sum[0][0] = triangle[0][0];
+        
+        for(int i = 1; i < triangle.length; i++) {
+        	for(int j = 0; j < triangle[i].length-1; j++) {
+        		num = sum[i-1][j] + triangle[i][j];
+        		if(num > sum[i][j]) {sum[i][j] = num;}
+
+        		num = sum[i-1][j] + triangle[i][j+1];
+        		if(num > sum[i][j+1]) {sum[i][j+1] = num;}
+        		
+            	if(i == triangle.length-1 && j == triangle[i].length-2) {
+            		Arrays.sort(sum[i]);
+            		answer = sum[i][j+1];
+            	}
+        	}
+        }
+        
+		return answer;
+    }
+}

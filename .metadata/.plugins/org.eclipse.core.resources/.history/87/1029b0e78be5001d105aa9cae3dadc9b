@@ -1,0 +1,21 @@
+package step2;
+
+/* 시소 짝꿍 */
+public class P152996 {
+    public long solution(int[] weights) {
+        long answer = 0;
+        double a = 0;
+        
+        for(int i = 0; i < weights.length-1; i++) {
+        	for(int j = i+1; j < weights.length; j++) {
+        		
+        		a = (double)weights[i]/weights[j];
+        		switch() {
+        		
+        		}
+        	}
+        }
+        
+        return answer;
+    }
+}

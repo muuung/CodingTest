@@ -1,0 +1,24 @@
+package step2;
+import java.math.*;
+
+/* 시소 짝꿍 */
+public class P152996 {
+    public long solution(int[] weights) {
+        long answer = 0;
+        int a = 0;
+        BigInteger gcd = 0;
+        
+        for(int i = 0; i < weights.length-1; i++) {
+        	for(int j = i+1; j < weights.length; j++) {
+        		gcd = weights[i].gcd(weights[j]);
+        		if(weights[i] == weights[j] ||
+        		   weights[i]*3/2 == weights[j] ||
+        		   weights[i]*4/3 == weights[j]) {
+        			answer += 1;
+        		}
+        	}
+        }
+        
+        return answer;
+    }
+}

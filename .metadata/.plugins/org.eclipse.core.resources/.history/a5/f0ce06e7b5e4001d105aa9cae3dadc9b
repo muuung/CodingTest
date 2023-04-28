@@ -1,0 +1,15 @@
+package step3;
+
+public class run {
+
+	public static void main(String[] args) {
+		ex ex = new ex();
+		
+		try {
+			System.out.println("확인");
+			
+		} catch(Exception e) {
+			System.out.println("ERROR : " + e.getMessage());
+		}
+	}
+}

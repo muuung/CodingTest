@@ -1,0 +1,34 @@
+package step3;
+import java.util.*;
+
+/* 정수 삼각형 (통과) */
+public class P43105 {
+    public int solution(int[][] triangle) throws Exception {
+        int answer = 0;
+        
+        if(triangle.length >= 1 && triangle.length <= 500) {
+        	
+        } else {throw new Exception("삼각형의 높이는 1 이상 500 이하입니다.");}
+        int num = 0;
+        
+        int[][] sum = new int[triangle.length][triangle.length];
+        sum[0][0] = triangle[0][0];
+        
+        for(int i = 1; i < triangle.length; i++) {
+        	for(int j = 0; j < triangle[i].length-1; j++) {
+        		num = sum[i-1][j] + triangle[i][j];
+        		if(num > sum[i][j]) {sum[i][j] = num;}
+
+        		num = sum[i-1][j] + triangle[i][j+1];
+        		if(num > sum[i][j+1]) {sum[i][j+1] = num;}
+        		
+            	if(i == triangle.length-1 && j == triangle[i].length-2) {
+            		Arrays.sort(sum[i]);
+            		answer = sum[i][j+1];
+            	}
+        	}
+        }
+        
+		return answer;
+    }
+}

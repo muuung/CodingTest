@@ -1,0 +1,38 @@
+package step2;
+
+/* 마법의 엘리베이터 */
+public class P148653 {
+	public int solution(int storey) {
+		int answer = 0;
+		int mod = 0;
+		int length = Integer.toString(storey).length();
+		
+		for(int i = 1; i < Math.pow(10, length); i*=10) {
+			mod = storey%(i*10);
+			
+			if(mod == 0) {continue;}
+			
+			if(mod > i*5 || (mod == i*5 && storey%(i*100) > i*50)) {
+                storey += i*10 - mod;
+                answer += 10 - mod/i;
+            }
+            else if(mod < i*5 || (mod == i*5 && storey%(i*100) < i*60)) {
+                storey -= mod;
+                answer += mod/i;
+            }
+		}
+		
+		int index = (int) Math.pow(10, length);
+		
+		while(storey != 0 || index >= 1) {
+			if(storey/index >= 1) {
+            	answer += storey/index;
+            	storey %= index;
+            }
+			
+			index /= 10;
+		}
+		
+		return answer;
+    }
+}
