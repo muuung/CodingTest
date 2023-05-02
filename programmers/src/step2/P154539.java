@@ -28,7 +28,7 @@ public class P154539 {
 			}
 		}
 		
-		stack.clear();
+		stack.clear();ddd
 		return numbers;
     }
 }
