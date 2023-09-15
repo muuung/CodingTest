@@ -1,7 +1,7 @@
 package step2;
 import java.util.*;
 
-/* 뒤에 있는 큰 수 찾기 */
+/* 뒤에 있는 큰 수 찾기 (통과) */
 public class P154539 {
 	public int[] solution(int[] numbers) {
 		int num = 0;

@@ -2,11 +2,18 @@ package step3;
 
 public class run {
 	public static void main(String[] args) {
-		P43105 p = new P43105();
-		int triangle[][] = {{7}, {3, 8}, {8, 1, 0}, {2, 7, 4, 4}, {4, 5, 2, 6, 5}};
+//		P43105 p = new P43105();
+		P42579 p = new P42579();
+		
+		String genres[] = {"classic", "pop", "classic", "classic", "pop"};
+		int plays[] = {500, 600, 150, 800, 2500};
 		
 		try {
-			System.out.println(p.solution(triangle));	
+			int arr[] = p.solution(genres, plays);
+			
+			for(int i : arr)
+				System.out.print(i + " ");
+			
 		} catch(Exception e) {
 			System.out.println("ERROR : " + e.getMessage());
 		}
