@@ -1,32 +1,42 @@
 package step2;
 
-import java.util.regex.Pattern;
-
-/* 스킬트리 (풀이중) */
+/* 스킬트리 (통과) */
 public class P49993 {
     public int solution(String skill, String[] skill_trees) {
         int answer = 0;
-        
         String regex = "[A-Z]*";
         
-        StringBuilder pattern = new StringBuilder();
+        String[] skillArr = skill.split(""); 			  // "AB" -> {"A", "B"}
+        String skillRegex = String.join(regex, skillArr); // "A[A-Z]*B"
+        skillRegex = regex + skillRegex + regex;		  // "[A-Z]*A[A-Z]*B[A-Z]*"
         
-        for(int i = 0; i < skill.length(); i++) {
-        	if(i == 0) pattern.append(regex);
+        int index = 0;			   // 스킬트리 배열 인덱스
+        String matchString = null; // 매치할 문자열
+        boolean flag = false;	   // 플래그
+        
+        while(index < skill_trees.length) {
+        	int searchIdx = -1;    // 문자위치 검색
         	
-        	pattern.append(skill.substring(i, i+1));
-        	pattern.append(regex);
+            for(int i = skillArr.length-1; i >= 0; i--) {
+            	if(i == 0) {
+            		answer++;
+            		break;
+            	}
+            	
+            	searchIdx = skill_trees[index].indexOf(skillArr[i]);
+            	
+            	if(searchIdx != -1) {
+            		matchString = skillRegex.substring(0, (skillRegex.indexOf("*"+skillArr[i])+1));
+            		skill_trees[index] = skill_trees[index].substring(0, searchIdx);
+            		flag = skill_trees[index].matches(matchString);
+            		
+            		if(flag) answer++;
+            		break;
+            	}
+            }
+            
+            index++;
         }
-        
-        System.out.println(String.valueOf(pattern));
-        
-        for(int i =0; i < skill_trees.length; i++) {
-        	if(Pattern.matches(String.valueOf(pattern), skill_trees[i])) {
-        		answer++;
-        	}
-        }
-        
-        if(answer == 0) answer = -1;
         
         return answer;
     }
