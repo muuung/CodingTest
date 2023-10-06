@@ -1,6 +1,7 @@
 package step2;
 import java.util.*;
 
+/* 롤케이크 자르기 (풀이중) */
 public class P132265 {
     public int solution(int[] topping) {
     	int answer = 0;
