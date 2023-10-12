@@ -1,64 +1,46 @@
 package step3;
 import java.util.*;
 
-/* 배스트앨범 (풀이중) */
+/* 배스트앨범 (통과) */
 public class P42579 {
 	public int[] solution(String[] genres, int[] plays) {
-		// 장르별 합 map
-        HashMap<String, Integer> genresMap = new HashMap<String, Integer>();
+        int len = genres.length;
+        int count = 0;
+        HashMap<String, Integer> gMap = new HashMap<String, Integer>();
+        HashMap<Integer, Integer> pMap = new HashMap<Integer, Integer>();
         
-        // 장르별 합 구하기
-        for(int i = 0; i < genres.length; i++) {
-            if(!genresMap.containsKey(genres[i])) {
-            	genresMap.put(genres[i], plays[i]);
-                continue;
-            }
-
-            genresMap.replace(genres[i], genresMap.get(genres[i])+plays[i]);
+        for(int i = 0; i < len; i++) {
+            gMap.put(genres[i], gMap.getOrDefault(genres[i], 0) + plays[i]);
+            pMap.put(i, plays[i]);
         }
         
-        // 장르별 합 map 정렬
-        List<String> gkeySet = new ArrayList<>(genresMap.keySet());
-        gkeySet.sort((o1, o2) -> genresMap.get(o2).compareTo(genresMap.get(o1)));
+        List<String> gKeySet = new ArrayList<>(gMap.keySet());
+        gKeySet.sort((o1, o2) -> gMap.get(o2).compareTo(gMap.get(o1)));
         
-        // 장르별 고유번호 map
-        HashMap<Integer, Integer> indexMap = new HashMap<Integer, Integer>();
+        List<Integer> pKeySet = new ArrayList<>(pMap.keySet());
+        pKeySet.sort((o1, o2) -> pMap.get(o2).compareTo(pMap.get(o1)));
         
-        // 수록곡 고유번호 list
-        List<Integer> indexList = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<>();
         
-        // 장르별 2곡 수록 count
-        int count = 0;
-        
-        // 장르 비교해서 map에 put
-        for(String gkey : gkeySet) {
-            for(int i = 0; i < genres.length; i++) {
-                if(genres[i] == gkey)
-                	indexMap.put(plays[i], i);
-            }
-            
-            // 장르 map 정렬 후 수록곡 list에 add
-            List<Integer> iKeySet = new ArrayList<>(indexMap.keySet());     
-            Collections.sort(iKeySet);
-            Collections.reverse(iKeySet);
-            
-            for(int pKey : iKeySet) {
-            	indexList.add(indexMap.get(pKey));
-                count++;
+        for(String key : gKeySet) {
+            for(int i = 0; i < len; i++) {
+                if(genres[pKeySet.get(i)].equals(key)) {
+                    list.add(pKeySet.get(i));
+                    count++;
+                }
                 
                 if(count == 2) break;
             }
             
-            indexMap.clear();
-        	count = 0;
+            count = 0;
         }
         
-        // list -> array
-        int[] inc = new int[indexList.size()];
+        int[] best = new int[list.size()];
         
-        for (int i = 0 ; i < indexList.size(); i++)
-        	inc[i] = indexList.get(i).intValue();
+        for (int i = 0; i < list.size(); i++) {
+            best[i] = list.get(i);
+        }
         
-        return inc;
+        return best;
     }
 }

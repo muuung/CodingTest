@@ -11,10 +11,9 @@ public class run {
 		int arr[] = {1, 2, 1, 3, 1, 4, 1, 2};
 		
 		try {
-			System.out.println(p.solution(arr));
-			
+			System.out.println(p.solution(arr));	
 		} catch(Exception e) {
 			System.out.println("ERROR : " + e.getMessage());
-		}
+		}		
 	}
 }
