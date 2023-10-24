@@ -1,6 +1,7 @@
 package step2;
 import java.util.*;
 
+/* 귤고르기 (통과) */
 public class P138476 {
     public int solution(int k, int[] tangerine) {
         int answer = 0;
