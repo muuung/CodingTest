@@ -1,7 +1,7 @@
 package step1;
 import java.util.*;
 
-/* 추억 점수 */
+/* 추억 점수 (통과) */
 public class P176963 {
     public int[] solution(String[] name, int[] yearning, String[][] photo) {
         int[] answer = new int[photo.length];
