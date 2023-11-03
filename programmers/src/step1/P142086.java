@@ -1,5 +1,6 @@
 package step1;
 
+/* 가장 가까운 같은 글자 (통과) */
 public class P142086 {
     public int[] solution(String s) {
         int cnt = 0;
