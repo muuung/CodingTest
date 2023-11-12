@@ -3,6 +3,8 @@ package step3;
 /* 연속 펄스 부분 수열의 합 (풀이중) */
 public class P161988 {
     public long solution(int[] sequence) {
+    	// 누적합 이용하여 재풀이 예정
+    	
         int oddSum = 0;
         int eveSum = 0;
         int sum = 0;
