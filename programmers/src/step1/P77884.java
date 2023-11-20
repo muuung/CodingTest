@@ -8,7 +8,7 @@ public class P77884 {
         Set<Integer> set = new HashSet<>();
         
         for(; left <= right; left++) {
-            for(int i = 1; i < left; i++) {
+            for(int i = 1; i <= left; i++) {
                 if(set.contains(i)) {
                     break;
                 } else if(left%i == 0) {
