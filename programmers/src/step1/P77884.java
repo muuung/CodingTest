@@ -7,6 +7,7 @@ public class P77884 {
         int answer = 0;
         Set<Integer> set = new HashSet<>();
         
+        // 약수의 개수
         for(; left <= right; left++) {
             for(int i = 1; i <= left; i++) {
                 if(set.contains(i)) {
