@@ -18,12 +18,6 @@ public class P77884 {
                 }
             }
             
-            if(set.size()%2 == 0) {
-                answer += left;
-            } else {
-                answer -= left;
-            }
-            
             set.clear();
         }
         
