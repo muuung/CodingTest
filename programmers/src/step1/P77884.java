@@ -17,8 +17,6 @@ public class P77884 {
                     set.add(left/i);
                 }
             }
-            
-            set.clear();
         }
         
         return answer;
