@@ -5,7 +5,7 @@ public class P147355 {
     public int solution(String t, String p) {
         int t2 = 0;
         int p2 = Integer.parseInt(p);
-        int len = p.length();
+        int len = p.length()-1;
         int answer = 0;
         
         for(int i = 0; i <= t.length()-len; i++) {
