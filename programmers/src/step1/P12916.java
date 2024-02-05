@@ -3,14 +3,15 @@ package step1;
 /* 문자열 내 p와 y의 개수 (풀이중) */
 public class P12916 {
     boolean solution(String s) {
-        boolean answer = true;
+    	int p = 0;
+    	int y = 0;
+
+        for(int i = 0; i < s.length(); i++) {
+        	if(s.charAt(i).equals("p")) {
+        		
+        	}
+        }
         
-        s.replace("P", "");
-        
-        int len1 = s.replace("p", "").length();
-        
-        
-        
-        return answer;
+        return p == y? true : false;
     }
 }
