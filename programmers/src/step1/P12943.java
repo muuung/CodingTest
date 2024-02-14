@@ -12,7 +12,7 @@ public class P12943 {
             } else if(num%2 == 0) {
                 num /= 2;
             } else {
-                num = num*3 + 1;
+                num = num*3 + 1; // 여기서 int형의 범위를 벗어날 수 있으므로 long형 변수를 사용해야한다..?
             }
             answer++;
         }
