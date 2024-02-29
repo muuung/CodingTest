@@ -17,6 +17,9 @@ public class P42576 {
 
 //        다른 풀이 ↓↓
 //
+//        시간 복잡도의 차이가 큰 편
+//        HashMap을 썼을 때 더 빨라졌다!
+//
 //        String answer = "";
 //        HashMap<String, Integer> map = new HashMap<>();
 //
