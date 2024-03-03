@@ -17,19 +17,16 @@ public class P42840 {
         List<Entry<Integer, Integer>> list = new ArrayList<>(map.entrySet());
         list.sort(Entry.comparingByValue());
 
-        // 여기서 오류..ㅜㅜ
-        for(int i = 1; i < 3; i++) {
-            if(!list.get(0).getValue().equals(list.get(i).getValue())) {
-                list.remove(i);
-                i--;
+        for(int i = 2; i > 0; i--) {
+            if(!list.get(i).getValue().equals(list.get(0).getValue())) {
+                list.remove(0);
             }
         }
 
         int[] answer = new int[list.size()];
 
-        for(int i = 0; i < list.size(); i++) {
+        for(int i = 0; i < list.size(); i++)
             answer[i] = list.get(i).getKey();
-        }
 
         return answer;
     }
