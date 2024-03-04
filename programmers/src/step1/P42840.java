@@ -2,7 +2,7 @@ package step1;
 import java.util.*;
 import java.util.Map.*;
 
-/* 모의고사 (풀이중) */
+/* 모의고사 (통과) */
 public class P42840 {
     public int[] solution(int[] answers) {
         int[] arr1 = {1, 2, 3, 4, 5};
