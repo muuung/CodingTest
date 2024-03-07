@@ -20,7 +20,6 @@ public class P42748 {
             cut[i] = array[commands[0]+i-1];
 
         Arrays.sort(cut);
-
         return cut[commands[2]-1];
     }
 }

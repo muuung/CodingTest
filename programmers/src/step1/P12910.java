@@ -20,7 +20,6 @@ public class P12910 {
             if(arr[i]%divisor == 0) answer[--cnt] = arr[i];
 
         Arrays.sort(answer);
-
         return answer;
 
 //        다른 풀이 ↓↓
