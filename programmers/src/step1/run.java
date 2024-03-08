@@ -7,8 +7,8 @@ public class run {
 //		P12944 p = new P12944();
 //		P176963 p = new P176963();
 		P147355 p = new P147355();
-		
-		try {	
+
+		try {
 			System.out.print(p.solution("1234", "2"));
 		} catch(Exception e) {
 			System.out.println("ERROR : " + e.getMessage());
