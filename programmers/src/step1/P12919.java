@@ -1,20 +1,9 @@
 package step1;
+import java.util.Arrays;
 
-/* 두 정수 사이의 합 (통과) */
+/* 서울에서 김서방 찾기 (통과) */
 public class P12919 {
-    public long solution(int a, int b) {
-        int num = 0;
-        long answer = 0;
-        
-        if(a > b) {
-            num = a;
-            a = b;
-            b = num;
-        }
-        
-        for(; a <= b; a++)
-            answer += a;
-        
-        return answer;
+    public String solution(String[] seoul) {
+        return "김서방은 " + Arrays.asList(seoul).indexOf("Kim") + "에 있다";
     }
 }
