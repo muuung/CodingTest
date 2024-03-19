@@ -1,6 +1,6 @@
 package step2;
 
-public class run {
+public class Run {
 	public static void main(String[] args) {
 //		P148653 p = new P148653();
 //		P152996 p = new P152996();

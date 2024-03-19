@@ -1,7 +1,6 @@
 package step1;
-import java.util.*;
 
-public class run {
+public class Run {
 	public static void main(String[] args) {
 //		P12928 p = new P12928();
 //		P12944 p = new P12944();
