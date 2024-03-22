@@ -1,18 +1,20 @@
 package step1;
 
-/* 옹알이 (풀이중) */
+/* 옹알이 (통과) */
 public class P133499 {
     public int solution(String[] babbling) {
-        int answer = 0;
-        String[] arr = {"aya", "ye", "woo", "ma"};
+        String[] words = {"aya", "ye", "woo", "ma"};
+        int cnt = 0;
 
-        for(int i = 0; i < babbling.length; i++) {
-            for(int j = 0; j < arr.length; j++) {
-                babbling[i] = babbling[i].replaceFirst(arr[j], "");
+        for(String bab : babbling) {
+            for(String word : words) {
+                if(bab.contains(word+word)) break;
+                bab = bab.replace(word, "/");
             }
-            if(babbling[i].equals("")) answer++;
+            bab = bab.replace("/", "");
+            if(bab.isEmpty()) cnt++;
         }
 
-        return answer;
+        return cnt;
     }
 }
