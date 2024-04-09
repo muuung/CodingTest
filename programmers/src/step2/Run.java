@@ -9,10 +9,12 @@ public class Run {
 //		P132265 p = new P132265();
 //		P12924 p = new P12924();
 //		P42577 p = new P42577();
-		P12951 p = new P12951();
+//		P12951 p = new P12951();
+//		P12911 p = new P12911();
+		P12909 p = new P12909();
 
 		try {
-			System.out.println(p.solution("for       the last week"));
+			System.out.println(p.solution(")()("));
 		} catch(Exception e) {
 			System.out.println("ERROR : " + e.getMessage());
 		}		
