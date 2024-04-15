@@ -9,13 +9,14 @@ public class Run {
 //		P147355 p = new P147355();
 //		P12932 p = new P12932();
 //		P68935 p = new P68935();
-		P250121 p = new P250121();
+//		P250121 p = new P250121();
+		P42862 p = new P42862();
 
-		int[][] arr = {{1, 20300104, 100, 80}, {2, 20300804, 847, 37}, {3, 20300401, 10, 8}};
+		int[] arr1 = {2, 4};
+		int[] arr2 = {1, 3, 5};
 
 		try {
-			for(int[] a : p.solution(arr, "date", 20300501, "remain"))
-				System.out.println(Arrays.toString(a));
+			System.out.println(p.solution(5, arr1, arr2));
 
 		} catch(Exception e) {
 			System.out.println("ERROR : " + e.getMessage());
