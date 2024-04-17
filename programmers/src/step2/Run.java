@@ -11,10 +11,13 @@ public class Run {
 //		P42577 p = new P42577();
 //		P12951 p = new P12951();
 //		P12911 p = new P12911();
-		P12909 p = new P12909();
+//		P12909 p = new P12909();
+		P42578 p = new P42578();
+
+		String[][] arr = {{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}};
 
 		try {
-			System.out.println(p.solution(")()("));
+			System.out.println(p.solution(arr));
 		} catch(Exception e) {
 			System.out.println("ERROR : " + e.getMessage());
 		}		
