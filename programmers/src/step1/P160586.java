@@ -33,12 +33,12 @@ public class P160586 {
                     break;
                 }
 
-                for(int k = 0; k < keymap.length; k++) {
-                    cnt = keymap[i].indexOf(Character.toString(targets[i].charAt(i)));
-                    if(cnt == 0 || map.getOrDefault(targets[i].charAt(i), 101) > cnt)
-                        map.put(targets[i].charAt(i), )
-
-                }
+//                for(int k = 0; k < keymap.length; k++) {
+//                    cnt = keymap[i].indexOf(Character.toString(targets[i].charAt(i)));
+//                    if(cnt == 0 || map.getOrDefault(targets[i].charAt(i), 101) > cnt)
+//                        map.put(targets[i].charAt(i), )
+//
+//                }
 
 
 
